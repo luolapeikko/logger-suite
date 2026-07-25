@@ -1,7 +1,7 @@
 /**
  * [ILoggerLike](https://luolapeikko.github.io/logger-suite/interfaces/ILoggerLike.html) is a common logger interface which should work with console, winston, and log4js.
  * @example
- * import {type ILoggerLike} from '@luolapeikko/logger-like';
+ * import type { ILoggerLike } from '@luolapeikko/logger-like';
  * function demo(logger: ILoggerLike) {
  *	 logger.info('hello');
  * }
