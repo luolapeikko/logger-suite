@@ -1,0 +1,29 @@
+name: Logger Type CI/CD
+on:
+  push:
+    branches: [main]
+    paths:
+      - "packages/logger-type/**"
+      - ".github/workflows/logger-type.yml"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/type-module.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "packages/logger-type/**"
+      - ".github/workflows/logger-type.yml"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/type-module.yml"
+
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
+jobs:
+  module-flow:
+    uses: ./.github/workflows/type-module.yml
+    secrets: inherit
+    with:
+      package-path: packages/logger-type
