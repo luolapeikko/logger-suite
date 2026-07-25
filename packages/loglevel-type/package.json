@@ -1,0 +1,12 @@
+{
+  "name": "@luolapeikko/loglevel-type",
+  "version": "0.0.1",
+  "description": "Log level type definition for TypeScript.",
+  "types": "./index.d.ts",
+  "files": ["index.d.ts"],
+  "keywords": ["logger", "typescript", "winston", "log4js", "console"],
+  "repository": "github:luolapeikko/logger-suite",
+  "author": "luolapeikko",
+  "license": "MIT",
+  "type": "module"
+}
