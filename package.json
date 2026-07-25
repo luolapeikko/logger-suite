@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"private": true,
 	"scripts": {
+		"build": "echo \"No build step yet\"",
 		"lint": "biome check",
 		"docs": "typedoc --options typedoc.json"
 	},
