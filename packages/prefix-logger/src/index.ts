@@ -1,13 +1,13 @@
 import type {ILoggerLike} from '@luolapeikko/logger-type';
 
 /**
- * [PrefixLogger](https://luolapeikko.github.io/logger-suite/classes/PrefixLogger.html) is a logger that add prefix to each log message.
+ * [PrefixLogger](https://luolapeikko.github.io/logger-suite/classes/_luolapeikko_prefix-logger.PrefixLogger.html) is a logger that add prefix to each log message.
  * @example
  * const logger = new PrefixLogger('ServiceXyz:', console);
  * logger.info('is running');
  * // output: ServiceXyz: is running
  * @since v0.0.1
- * @see [PrefixLogger](https://luolapeikko.github.io/logger-suite/classes/PrefixLogger.html)
+ * @see [PrefixLogger](https://luolapeikko.github.io/logger-suite/classes/_luolapeikko_prefix-logger.PrefixLogger.html)
  */
 export class PrefixLogger implements ILoggerLike {
 	public readonly prefix: string;

@@ -1,13 +1,13 @@
 /**
- * [ILoggerLike](https://luolapeikko.github.io/logger-suite/interfaces/ILoggerLike.html) is a common logger interface which should work with console, winston, and log4js.
+ * [ILoggerLike](https://luolapeikko.github.io/logger-suite/interfaces/_luolapeikko_logger-type.ILoggerLike.html) is a common logger interface which should work with console, winston, and log4js.
  * @example
- * import type { ILoggerLike } from '@luolapeikko/logger-like';
+ * import type { ILoggerLike } from '@luolapeikko/logger-type';
  * function demo(logger: ILoggerLike) {
  *	 logger.info('hello');
  * }
  * demo(console);
  * @since v0.0.1
- * @see [ILoggerLike](https://luolapeikko.github.io/logger-suite/interfaces/ILoggerLike.html)
+ * @see [ILoggerLike](https://luolapeikko.github.io/logger-suite/interfaces/_luolapeikko_logger-type.ILoggerLike.html)
  */
 export interface ILoggerLike {
 	trace?(message: any, ...args: any[]): void;

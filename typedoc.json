@@ -19,6 +19,6 @@
     "entryPoints": ["src/index.ts", "index.d.ts"]
   },
   "name": "@luolapeikko/logger-suite",
-  "plugin": ["typedoc-plugin-dt-links", "typedoc-plugin-mdn-links"],
+  "plugin": ["typedoc-plugin-dt-links", "typedoc-plugin-mdn-links", "typedoc-github-theme"],
   "readme": "README.md"
 }
