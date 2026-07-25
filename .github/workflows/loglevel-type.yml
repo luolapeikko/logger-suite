@@ -1,0 +1,29 @@
+name: LogLevel Type CI/CD
+on:
+  push:
+    branches: [main]
+    paths:
+      - "packages/loglevel-type/**"
+      - ".github/workflows/loglevel-type.yml"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/type-module.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "packages/loglevel-type/**"
+      - ".github/workflows/loglevel-type.yml"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/type-module.yml"
+
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
+jobs:
+  module-flow:
+    uses: ./.github/workflows/type-module.yml
+    secrets: inherit
+    with:
+      package-path: packages/loglevel-type
