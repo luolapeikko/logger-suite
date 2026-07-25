@@ -8,6 +8,7 @@
     "build": "pnpm -r run build",
     "lint": "biome check",
     "test": "vitest run --coverage",
+	"validate": "pnpm -r run validate",
     "docs": "typedoc --options typedoc.json"
   },
   "keywords": [],
