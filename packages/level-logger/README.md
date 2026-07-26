@@ -1,15 +1,16 @@
-# @luolapeikko/prefix-logger
+# @luolapeikko/level-logger
 
 ## Overview
 
-A logger that adds a prefix to each log message.
+Logger that wraps another logger and filters log messages based on a minimum log level.
 
 ## Example
 
 ```typescript
-const logger = new PrefixLogger("ServiceXyz:", console);
-logger.info("is running");
-// output: ServiceXyz: is running
+const logger = new LevelLogger(console, "info");
+logger.debug("hello"); // will not be logged
+logger.level = "warn"; // set minimum log level to warn
+logger.level; // returns 'warn'
 ```
 
 See more in [documentation](https://luolapeikko.github.io/logger-suite/)
