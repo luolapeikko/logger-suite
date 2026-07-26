@@ -42,7 +42,18 @@ importers:
         specifier: ^4.1.10
         version: 4.1.10(@vitest/coverage-v8@4.1.10)(vite@8.1.5(yaml@2.9.0))
 
+  packages/level-logger:
+    devDependencies:
+      '@luolapeikko/logger-type':
+        specifier: workspace:*
+        version: link:../logger-type
+      '@luolapeikko/loglevel-type':
+        specifier: workspace:*
+        version: link:../loglevel-type
+
   packages/logger-type: {}
+
+  packages/loglevel-type: {}
 
   packages/prefix-logger:
     devDependencies:
