@@ -18,8 +18,9 @@ export type KeyLoggerMapInfer<T extends Record<string, LogLevelType> = Record<st
  *   input: 'debug',
  * } as const;
  * const logger = new KeyLogger(defaultLogMap, console);
- * logger.key('test', 'goes to info');
- * logger.key('input', 'goes to debug');
+ * logger.key("test", "goes to info");
+ * logger.key("input", "goes to debug");
+ * logger.info("this is an info message");
  * @since v0.0.1
  * @see [KeyLogger](https://luolapeikko.github.io/logger-suite/classes/_luolapeikko_key-logger.KeyLogger.html)
  */
@@ -32,10 +33,19 @@ export class KeyLogger<LogMapType extends Record<string, LogLevelType>> implemen
 	}
 	#logMap: Map<keyof LogMapType, LogLevelType>;
 	#defaultLogMap: Readonly<KeyLoggerMapInfer<LogMapType>>;
+	/**
+	 * Logger instance that implements {@link ILoggerLike} interface. (console, winston, log4js, etc.)
+	 */
 	public logger: ILoggerLike | undefined;
+	/**
+	 * Creates a new KeyLogger instance with the given default log key mapping and optional logger.
+	 * @param defaultMap default log key mapping object with {@link LogLevelType} values.
+	 * @param logger  Logger instance that implements {@link ILoggerLike} interface. (console, winston, log4js, etc.)
+	 * @since v0.0.1
+	 */
 	public constructor(defaultMap: LogMapType, logger?: ILoggerLike) {
 		this.logger = logger;
-		this.#defaultLogMap = Object.freeze(Object.assign({}, defaultMap));
+		this.#defaultLogMap = Object.freeze(Object.assign({}, defaultMap)); // clone and freeze the default map.
 		this.#logMap = new Map(Object.entries(defaultMap) as [keyof LogMapType, LogLevelType][]);
 	}
 

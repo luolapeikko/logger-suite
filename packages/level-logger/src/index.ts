@@ -13,15 +13,18 @@ import type {LogLevelType} from '@luolapeikko/loglevel-type';
  */
 export class LevelLogger implements ILoggerLike {
 	static readonly #levelSet: Set<LogLevelType> = new Set(['none', 'trace', 'debug', 'info', 'warn', 'error']);
-	static #assertLevel(level: LogLevelType): asserts level is LogLevelType {
-		if (!LevelLogger.#levelSet.has(level)) {
-			throw new TypeError(`Invalid log level: ${level}, expected one of [${Array.from(LevelLogger.#levelSet).join(', ')}]`);
+	static #assertLevel(level: LogLevelType | undefined): asserts level is LogLevelType {
+		if (!level || !LevelLogger.#levelSet.has(level)) {
+			throw new TypeError(`LevelLogger: Invalid log level: ${JSON.stringify(level)}, expected one of [${Array.from(LevelLogger.#levelSet).join(', ')}]`);
 		}
 	}
 	#level: LogLevelType;
 	#initial: LogLevelType;
+	/**
+	 * Logger instance that implements {@link ILoggerLike} interface. (console, winston, log4js, etc.)
+	 */
 	public logger: ILoggerLike | undefined;
-	public constructor(logger: ILoggerLike | undefined, level: LogLevelType = 'debug') {
+	public constructor(logger?: ILoggerLike, level: LogLevelType = 'debug') {
 		LevelLogger.#assertLevel(level);
 		this.#level = level;
 		this.#initial = level;

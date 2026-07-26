@@ -11,7 +11,10 @@ import type {ILoggerLike} from '@luolapeikko/logger-type';
  */
 export class PrefixLogger implements ILoggerLike {
 	public readonly prefix: string;
-	public readonly logger: ILoggerLike | undefined;
+	/**
+	 * Logger instance that implements {@link ILoggerLike} interface. (console, winston, log4js, etc.)
+	 */
+	public logger: ILoggerLike | undefined;
 	public constructor(prefix: string, logger?: ILoggerLike) {
 		this.prefix = prefix;
 		this.logger = logger;
