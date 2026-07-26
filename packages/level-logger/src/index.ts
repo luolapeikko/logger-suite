@@ -13,11 +13,16 @@ import type {LogLevelType} from '@luolapeikko/loglevel-type';
  */
 export class LevelLogger implements ILoggerLike {
 	static readonly #levelSet: Set<LogLevelType> = new Set(['none', 'trace', 'debug', 'info', 'warn', 'error']);
+	static #assertLevel(level: LogLevelType): asserts level is LogLevelType {
+		if (!LevelLogger.#levelSet.has(level)) {
+			throw new TypeError(`Invalid log level: ${level}, expected one of [${Array.from(LevelLogger.#levelSet).join(', ')}]`);
+		}
+	}
 	#level: LogLevelType;
 	#initial: LogLevelType;
 	public logger: ILoggerLike | undefined;
 	public constructor(logger: ILoggerLike | undefined, level: LogLevelType = 'debug') {
-		this.#assertLevel(level);
+		LevelLogger.#assertLevel(level);
 		this.#level = level;
 		this.#initial = level;
 		this.logger = logger;
@@ -29,7 +34,7 @@ export class LevelLogger implements ILoggerLike {
 
 	public set level(value: LogLevelType | undefined) {
 		if (value !== undefined) {
-			this.#assertLevel(value);
+			LevelLogger.#assertLevel(value);
 		}
 		this.#level = value ?? this.#initial;
 	}
@@ -78,12 +83,6 @@ export class LevelLogger implements ILoggerLike {
 				return 5;
 			case 'none':
 				return 6;
-		}
-	}
-
-	#assertLevel(level: LogLevelType): void {
-		if (!LevelLogger.#levelSet.has(level)) {
-			throw new TypeError(`Invalid log level: ${level}, expected one of [${Array.from(LevelLogger.#levelSet).join(', ')}]`);
 		}
 	}
 }

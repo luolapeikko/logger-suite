@@ -27,8 +27,8 @@ importers:
         specifier: ^0.4.0
         version: 0.4.0(typedoc@0.28.20(typescript@6.0.3))
       typedoc-plugin-dt-links:
-        specifier: ^2.0.64
-        version: 2.0.64(typedoc@0.28.20(typescript@6.0.3))
+        specifier: ^2.0.65
+        version: 2.0.65(typedoc@0.28.20(typescript@6.0.3))
       typedoc-plugin-mdn-links:
         specifier: ^5.1.1
         version: 5.1.1(typedoc@0.28.20(typescript@6.0.3))
@@ -41,6 +41,15 @@ importers:
       vitest:
         specifier: ^4.1.10
         version: 4.1.10(@vitest/coverage-v8@4.1.10)(vite@8.1.5(yaml@2.9.0))
+
+  packages/key-logger:
+    devDependencies:
+      '@luolapeikko/logger-type':
+        specifier: workspace:*
+        version: link:../logger-type
+      '@luolapeikko/loglevel-type':
+        specifier: workspace:*
+        version: link:../loglevel-type
 
   packages/level-logger:
     devDependencies:
@@ -982,6 +991,10 @@ packages:
     resolution: {integrity: sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ==}
     engines: {node: '>=18'}
 
+  string-width@8.2.2:
+    resolution: {integrity: sha512-GaPUh5gfdrYzqeVNZvUfT23vYYxXzKYidUcnMtJg/3rxRV63EFZy3k6xfKlmfeJD0176lnUV/Usr3XcwSvFzpg==}
+    engines: {node: '>=20'}
+
   strip-ansi@7.2.0:
     resolution: {integrity: sha512-yDPMNjp4WyfYBkHnjIRLfca1i6KMyGCtsVgoKe/z1+6vukgaENdgGBZt+ZmKPc4gavvEZ5OgHfHdrazhgNyG7w==}
     engines: {node: '>=12'}
@@ -1056,8 +1069,8 @@ packages:
     peerDependencies:
       typedoc: ~0.28.0
 
-  typedoc-plugin-dt-links@2.0.64:
-    resolution: {integrity: sha512-Ht0vdoCtIkIMTsVHrGBZ+n3treD64l6+aEeotQY1EjI3tRagAVSN9dpzQUbovtr1j9Mlkd6Gv1StKOeEeYcxNA==}
+  typedoc-plugin-dt-links@2.0.65:
+    resolution: {integrity: sha512-MJoRcZdU3yUi0pIBlRPi+XY25OPWr/MmLEjtqT3nJOWRzy6VKNKMTgbZXz1yqOtxIapUBenuw7P5WWru+rhqRw==}
     peerDependencies:
       typedoc: 0.28.x
 
@@ -1207,8 +1220,8 @@ packages:
     resolution: {integrity: sha512-rwu/ClNdSMpkSrUb+d6BRsSkLUq1fmfsY6TOpYzTwvwkg1/NRG85KBy3kq++A8LKQwX6lsu+aWad+2khvuXrqw==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=23}
 
-  yargs@18.0.0:
-    resolution: {integrity: sha512-4UEqdc2RYGHZc7Doyqkrqiln3p9X2DZVxaGbwhn2pi7MrRagKaOcIKe8L3OxYcbhXLgLFUS3zAYuQjKBQgmuNg==}
+  yargs@18.1.0:
+    resolution: {integrity: sha512-2rAgRKu54VsHkqI0/tYkmluGXHD4KW7yZoycuqDQ15QOTnc2VVfy0nN/1eMhnQLO00A+dwtK20xuCnc1YGeUyg==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=23}
 
   yocto-queue@0.1.0:
@@ -1644,7 +1657,7 @@ snapshots:
       istanbul-reports: 3.2.0
       test-exclude: 8.0.0
       v8-to-istanbul: 9.3.0
-      yargs: 18.0.0
+      yargs: 18.1.0
       yargs-parser: 21.1.1
 
   cac@7.0.0: {}
@@ -1954,6 +1967,11 @@ snapshots:
       get-east-asian-width: 1.6.0
       strip-ansi: 7.2.0
 
+  string-width@8.2.2:
+    dependencies:
+      get-east-asian-width: 1.6.0
+      strip-ansi: 7.2.0
+
   strip-ansi@7.2.0:
     dependencies:
       ansi-regex: 6.2.2
@@ -2013,7 +2031,7 @@ snapshots:
     dependencies:
       typedoc: 0.28.20(typescript@6.0.3)
 
-  typedoc-plugin-dt-links@2.0.64(typedoc@0.28.20(typescript@6.0.3)):
+  typedoc-plugin-dt-links@2.0.65(typedoc@0.28.20(typescript@6.0.3)):
     dependencies:
       typedoc: 0.28.20(typescript@6.0.3)
 
@@ -2108,12 +2126,12 @@ snapshots:
 
   yargs-parser@22.0.0: {}
 
-  yargs@18.0.0:
+  yargs@18.1.0:
     dependencies:
       cliui: 9.0.1
       escalade: 3.2.0
       get-caller-file: 2.0.5
-      string-width: 7.2.0
+      string-width: 8.2.2
       y18n: 5.0.8
       yargs-parser: 22.0.0
 

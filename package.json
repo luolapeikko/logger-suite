@@ -22,7 +22,7 @@
     "tsdown": "^0.22.14",
     "typedoc": "^0.28.20",
     "typedoc-github-theme": "^0.4.0",
-    "typedoc-plugin-dt-links": "^2.0.64",
+    "typedoc-plugin-dt-links": "^2.0.65",
     "typedoc-plugin-mdn-links": "^5.1.1",
     "typescript": "^6.0.3",
     "vite": "^8.1.5",
