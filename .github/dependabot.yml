@@ -3,6 +3,7 @@ updates:
   - package-ecosystem: "npm"
     directories:
       - "/"
+      - "/packages/key-logger"
       - "/packages/level-logger"
       - "/packages/logger-type"
       - "/packages/loglevel-type"
