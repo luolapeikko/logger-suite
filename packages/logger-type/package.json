@@ -1,6 +1,6 @@
 {
   "name": "@luolapeikko/logger-type",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Logger interface definition for TypeScript.",
   "types": "./index.d.ts",
   "files": ["index.d.ts"],
