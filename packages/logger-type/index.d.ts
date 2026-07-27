@@ -17,10 +17,12 @@ export interface ILoggerLike {
 	error(message: any, ...args: any[]): void;
 }
 
+type LogArgs = [message: any, ...args: any[]];
 /**
- * [LoggerContext](https://luolapeikko.github.io/logger-suite/interfaces/_luolapeikko_logger-type.ILoggerLike.html) is a common logger context interface.
- * @since v0.0.2
+ * [LoggerPlugin](https://luolapeikko.github.io/logger-suite/interfaces/_luolapeikko_logger-type.LoggerPlugin.html) is a plugin interface for loggers that allows you to modify log messages before they are logged.
+ * @since v0.0.3
+ * @see [LoggerPlugin](https://luolapeikko.github.io/logger-suite/interfaces/_luolapeikko_logger-type.LoggerPlugin.html)
  */
-export interface LoggerContext {
-	logger?: ILoggerLike;
+export interface LoggerPlugin {
+	handle(level: 'trace' | 'debug' | 'info' | 'warn' | 'error', ...args: LogArgs): LogArgs;
 }
