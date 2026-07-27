@@ -16,8 +16,11 @@ export interface ILoggerLike {
 	warn(message: any, ...args: any[]): void;
 	error(message: any, ...args: any[]): void;
 }
-
-type LogArgs = [message: any, ...args: any[]];
+/**
+ * Generic logger arguments
+ * @since v0.0.4
+ */
+export type LogArgs = [message: any, ...args: any[]];
 /**
  * [LoggerPlugin](https://luolapeikko.github.io/logger-suite/interfaces/_luolapeikko_logger-type.LoggerPlugin.html) is a plugin interface for loggers that allows you to modify log messages before they are logged.
  * @since v0.0.3
