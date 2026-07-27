@@ -16,3 +16,11 @@ export interface ILoggerLike {
 	warn(message: any, ...args: any[]): void;
 	error(message: any, ...args: any[]): void;
 }
+
+/**
+ * [LoggerContext](https://luolapeikko.github.io/logger-suite/interfaces/_luolapeikko_logger-type.ILoggerLike.html) is a common logger context interface.
+ * @since v0.0.2
+ */
+export interface LoggerContext {
+	logger?: ILoggerLike;
+}
