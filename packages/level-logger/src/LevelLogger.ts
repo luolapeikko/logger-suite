@@ -5,7 +5,7 @@ import {LevelLoggerPlugin, type LevelLoggerPluginOptions} from './LevelLoggerPlu
 /**
  * [LevelLogger](https://luolapeikko.github.io/logger-suite/classes/_luolapeikko_level-logger.LevelLogger.html) is a class implementation which can set minimum log levels.
  * @example
- * const logger = new LevelLogger(console, 'info');
+ * const logger = new LevelLogger({level: 'info'}, console);
  * logger.debug('hello'); // will not be logged
  * logger.level = 'warn'; // set minimum log level to warn
  * logger.level; // returns 'warn'
@@ -18,7 +18,7 @@ export class LevelLogger implements ILoggerLike {
 	 * Logger instance that implements {@link ILoggerLike} interface. (console, winston, log4js, etc.)
 	 */
 	public logger: ILoggerLike | undefined;
-	public constructor(options?: LevelLoggerPluginOptions, logger?: ILoggerLike) {
+	public constructor(options: LevelLoggerPluginOptions = {level: 'debug'}, logger?: ILoggerLike) {
 		this.#plugin = new LevelLoggerPlugin(options);
 		this.logger = logger;
 	}

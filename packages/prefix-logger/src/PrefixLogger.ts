@@ -4,7 +4,7 @@ import {PrefixLoggerPlugin, type PrefixLoggerPluginOptions} from './PrefixLogger
 /**
  * [PrefixLogger](https://luolapeikko.github.io/logger-suite/classes/_luolapeikko_prefix-logger.PrefixLogger.html) is a logger that add prefix to each log message.
  * @example
- * const logger = new PrefixLogger('ServiceXyz:', console);
+ * const logger = new PrefixLogger({prefix: 'ServiceXyz:'}, console);
  * logger.info('is running');
  * // output: ServiceXyz: is running
  * @since v0.0.1

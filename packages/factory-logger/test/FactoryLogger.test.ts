@@ -138,7 +138,9 @@ describe('FactoryLogger', function () {
 	});
 
 	it('should set and reset all key levels using setAllLevel()', function () {
-		const serviceLogger = createLogger(logger).withKeys({keyMap: {a: 'none', b: 'warn'}}).toLogger();
+		const serviceLogger = createLogger(logger)
+			.withKeys({keyMap: {a: 'none', b: 'warn'}})
+			.toLogger();
 
 		serviceLogger.setAllLevel('error');
 		serviceLogger.key('a', 'a-error');

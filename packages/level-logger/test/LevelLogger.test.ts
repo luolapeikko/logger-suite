@@ -17,7 +17,7 @@ const spyLogger: ILoggerLike = {
 	warn: warnSpy,
 };
 
-const logger = new LevelLogger(spyLogger);
+const logger = new LevelLogger(undefined, spyLogger);
 
 function setToAll(message: string, ...args: any[]) {
 	logger.trace(message, ...args);
@@ -97,7 +97,7 @@ describe('LevelLogger', function () {
 		expect(logger.level).to.be.equal('none');
 	});
 	it('should fail to add wrong initial level to logger', function () {
-		expect(() => new LevelLogger(spyLogger, -1 as unknown as LogLevelType)).to.throw(
+		expect(() => new LevelLogger({level: -1 as unknown as LogLevelType}, spyLogger)).to.throw(
 			TypeError,
 			'Invalid log level: -1, expected one of [none, trace, debug, info, warn, error]',
 		);
