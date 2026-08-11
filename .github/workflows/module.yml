@@ -34,7 +34,7 @@ jobs:
         run: pnpm run build
 
       - name: Validate
-        run: pnpm run validate
+        run: pnpm run --filter=${{env.PACKAGE_NAME}} validate
 
       - name: Test
         run: pnpm run test

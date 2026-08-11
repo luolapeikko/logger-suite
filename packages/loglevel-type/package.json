@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Log level type definition for TypeScript.",
   "types": "./index.d.ts",
+  "scripts": {
+    "validate": "tsc --noEmit"
+  },
   "files": ["index.d.ts"],
   "keywords": ["logger", "typescript", "winston", "log4js", "console"],
   "repository": "github:luolapeikko/logger-suite",
