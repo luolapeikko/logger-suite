@@ -16,16 +16,16 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "@biomejs/biome": "^2.5.5",
+    "@biomejs/biome": "^2.5.7",
     "@vitest/coverage-v8": "^4.1.10",
     "c8": "^12.0.0",
     "tsdown": "^0.22.14",
     "typedoc": "^0.28.20",
     "typedoc-github-theme": "^0.4.0",
-    "typedoc-plugin-dt-links": "^2.0.65",
+    "typedoc-plugin-dt-links": "^2.0.67",
     "typedoc-plugin-mdn-links": "^5.1.1",
     "typescript": "^6.0.3",
-    "vite": "^8.1.5",
+    "vite": "^8.2.1",
     "vitest": "^4.1.10"
   },
   "packageManager": "pnpm@10.34.5+sha512.a4ee05f2f73658255bd6a89859c065a45c28a57daefae2c893a168ee2b73168c37b91e83e57ea67654ad03f03031746430e8bce38e362e042605fb8abc80192e"
