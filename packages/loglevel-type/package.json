@@ -1,6 +1,6 @@
 {
   "name": "@luolapeikko/loglevel-type",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Log level type definition for TypeScript.",
   "types": "./index.d.ts",
   "files": ["index.d.ts"],

@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
   "name": "@luolapeikko/level-logger",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Level logger implementation for TypeScript.",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -31,7 +31,7 @@
     "@luolapeikko/loglevel-type": "workspace:*"
   },
   "peerDependencies": {
-    "@luolapeikko/logger-type": ">= 0.0.1",
-    "@luolapeikko/loglevel-type": ">= 0.0.1"
+    "@luolapeikko/logger-type": ">= 0.1.0",
+    "@luolapeikko/loglevel-type": ">= 0.1.0"
   }
 }

@@ -1,8 +1,8 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
-  "name": "@luolapeikko/prefix-logger",
+  "name": "@luolapeikko/factory-logger",
   "version": "0.1.0",
-  "description": "Prefix logger implementation for TypeScript.",
+  "description": "Factory logger implementation for TypeScript.",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
@@ -27,9 +27,17 @@
   "author": "luolapeikko",
   "license": "MIT",
   "devDependencies": {
-    "@luolapeikko/logger-type": "workspace:*"
+    "@luolapeikko/key-logger": "workspace:*",
+    "@luolapeikko/level-logger": "workspace:*",
+    "@luolapeikko/logger-type": "workspace:*",
+    "@luolapeikko/loglevel-type": "workspace:*",
+    "@luolapeikko/prefix-logger": "workspace:*"
   },
   "peerDependencies": {
-    "@luolapeikko/logger-type": ">= 0.1.0"
+    "@luolapeikko/key-logger": ">= 0.1.0",
+    "@luolapeikko/level-logger": ">= 0.1.0",
+    "@luolapeikko/logger-type": ">= 0.1.0",
+    "@luolapeikko/loglevel-type": ">= 0.1.0",
+    "@luolapeikko/prefix-logger": ">= 0.1.0"
   }
 }
